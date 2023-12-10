@@ -4,7 +4,8 @@
       @open="handleOpen"
       @close="handleClose"
       router
-      :default-openeds="[1,2,3]"
+      :default-openeds="[1, 2, 3]"
+      :default-active="$route.path"
     >
       <el-sub-menu :index="1">
         <template #title>
@@ -12,12 +13,19 @@
         </template>
         <el-sub-menu index="1-1">
           <template #title>布局</template>
-          <el-menu-item index="/show/layout/center">垂直居中</el-menu-item>
-          <el-menu-item index="1-2-2">
+          <el-menu-item
+            v-for="item in showLayoutViewsRoutes"
+            :key="item.name"
+            :index="item.path"
+            >
+             <span :title="item.name">{{item.name}}</span>
+            </el-menu-item
+          >
+          <!-- <el-menu-item index="/show-layout-CenterAdaptive">
             <div class="menu-name">
               <AutoTooltip isShowTooltip content="两侧宽度固定中间自适应宽度布局"></AutoTooltip>
             </div>
-          </el-menu-item>
+          </el-menu-item> -->
         </el-sub-menu>
         <el-sub-menu index="1-1">
           <template #title>导航</template>
@@ -60,21 +68,26 @@
 </template>
 
 <script>
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from "@element-plus/icons-vue";
+import { showLayoutViewsRoutes } from "./router";
+console.log(showLayoutViewsRoutes, "showLayoutViewsRoutes");
+
+// import {
+//   Document,
+//   Menu as IconMenu,
+//   Location,
+//   Setting,
+// } from "@element-plus/icons-vue";
 export default {
-  components: {
-    Document,
-    IconMenu,
-    Location,
-    Setting,
-  },
+  // components: {
+  //   Document,
+  //   IconMenu,
+  //   Location,
+  //   Setting,
+  // },
   data() {
-    return {};
+    return {
+      showLayoutViewsRoutes,
+    };
   },
   methods: {
     handleOpen() {},
@@ -87,21 +100,22 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
 .left-fixed-menu {
   position: fixed;
-  top:0;
+  top: 0;
   bottom: 0;
-  left:0;
-  width:200px;
+  left: 0;
+  width: 300px;
+  overflow: auto;
 }
 .right-content {
-  margin-left: 210px;
+  margin-left: 310px;
+  margin-bottom: 200px;
 }
- :deep(.el-menu-item .menu-name) {
+:deep(.el-menu-item .menu-name) {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

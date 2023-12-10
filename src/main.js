@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import registerComponent from './components'
+import 'highlight.js/styles/a11y-dark.css';
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
