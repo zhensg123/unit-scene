@@ -17,26 +17,29 @@
             v-for="item in showLayoutViewsRoutes"
             :key="item.name"
             :index="item.path"
-            >
-             <span :title="item.name">{{item.name}}</span>
-            </el-menu-item
           >
-          <!-- <el-menu-item index="/show-layout-CenterAdaptive">
-            <div class="menu-name">
-              <AutoTooltip isShowTooltip content="两侧宽度固定中间自适应宽度布局"></AutoTooltip>
-            </div>
-          </el-menu-item> -->
+            <span :title="item.name">{{ item.name }}</span>
+          </el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="1-1">
           <template #title>导航</template>
-          <el-menu-item index="1-1-1">面包屑导航</el-menu-item>
-          <el-menu-item index="1-2-2">Page Header 页头</el-menu-item>
+          <el-menu-item
+            v-for="item in showNavigationViewsRoutes"
+            :key="item.name"
+            :index="item.path"
+          >
+            <span :title="item.name">{{ item.name }}</span>
+          </el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="1-1">
           <template #title>数据展示</template>
-          <el-menu-item index="1-1-1">垂直居中</el-menu-item>
-          <el-menu-item index="1-2-2">垂直居中</el-menu-item>
-          <el-menu-item index="1-2-3">垂直居中</el-menu-item>
+          <el-menu-item
+            v-for="item in showDatashowViewsRoutes"
+            :key="item.name"
+            :index="item.path"
+          >
+            <span :title="item.name">{{ item.name }}</span>
+          </el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
       <el-sub-menu :index="2">
@@ -68,7 +71,11 @@
 </template>
 
 <script>
-import { showLayoutViewsRoutes } from "./router";
+import {
+  showLayoutViewsRoutes,
+  showDatashowViewsRoutes,
+  showNavigationViewsRoutes,
+} from "./router";
 console.log(showLayoutViewsRoutes, "showLayoutViewsRoutes");
 
 // import {
@@ -87,12 +94,40 @@ export default {
   data() {
     return {
       showLayoutViewsRoutes,
+      showDatashowViewsRoutes,
+      showNavigationViewsRoutes,
     };
   },
+  watch: {
+    '$route.path'(){
+      console.log(333)
+      this.$nextTick(()=>{
+        this.copyCode()
+      })
+    }
+  }, 
   methods: {
     handleOpen() {},
     handleClose() {},
+    copyCode() {
+      document.querySelectorAll(".copy-btn").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const code = button.previousElementSibling.textContent;
+          const textarea = document.createElement("textarea");
+          textarea.textContent = code;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        });
+      });
+    },
   },
+  mounted(){
+    this.$nextTick(()=>{
+      this.copyCode()
+    })
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -111,10 +146,12 @@ export default {
   width: 300px;
   overflow: auto;
 }
+
 .right-content {
   margin-left: 310px;
   margin-bottom: 200px;
 }
+
 :deep(.el-menu-item .menu-name) {
   text-overflow: ellipsis;
   white-space: nowrap;

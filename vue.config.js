@@ -12,5 +12,10 @@ module.exports = defineConfig({
       .use('custom-markdown-loader')
       .loader(require.resolve('./customMarkdownLoader.js'))
       .end();
+  },
+  devServer: {
+    client: {
+      overlay: false, // 禁用服务器错误遮罩层
+    },
   }
 })

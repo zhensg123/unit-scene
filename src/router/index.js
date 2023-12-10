@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import {generateRoutes} from './util'
 
 // require.context在函数内部使用会报错
@@ -9,13 +8,14 @@ export const showLayoutViewsRoutes = generateRoutes(require.context('../views/sh
 // 展示-数据展示数据
 export const showDatashowViewsRoutes = generateRoutes(require.context('../views/show/datashow', true, /\.vue$/), 'show-datashow')
 
+// 展示-导航数据
 export const showNavigationViewsRoutes = generateRoutes(require.context('../views/show/navigation', true, /\.vue$/), 'show-navigation')
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    redirect: '/show-layout-VerticalCenter'
   },
   ...showLayoutViewsRoutes,
   ...showDatashowViewsRoutes,
