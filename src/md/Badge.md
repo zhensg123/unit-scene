@@ -1,25 +1,21 @@
-<template>
-  <div v-html="md"></div>
+## Badge 徽章
 
-  <h3>效果</h3>
-  <div class="badge">
+sup是HTML中的一个标签，用于表示上标文本。实现Badge 徽章用到了sup，但具体位置实现实际是css。利用的是相对定位结合transform实现。
+
+### html
+
+```
+
+<div class="badge">
     <span>222</span>
     <sup class="badge-content is-fixed"> 333 </sup>
   </div>
-</template>
-<script>
-import Badge from "../../../md/Badge.md";
 
-export default {
-  name: "Badge 徽章",
-  data() {
-    return {
-      md: Badge,
-    };
-  },
-};
-</script>
-<style scoped>
+```
+### scss
+
+```
+
 .badge {
   position: relative;
   vertical-align: middle;
@@ -44,4 +40,5 @@ export default {
   white-space: nowrap;
   border: 1px solid #fff;
 }
-</style>
+```
+
