@@ -1,14 +1,15 @@
-## Badge 徽章
+## Badge 徽章/标记 (数据展示)
 
 sup是HTML中的一个标签，用于表示上标文本。实现Badge 徽章用到了sup，但具体位置实现实际是css。利用的是相对定位结合transform实现。
+
 
 ### html
 
 ```
 
-<div class="badge">
+ <div class="unit-badge">
     <span>222</span>
-    <sup class="badge-content is-fixed"> 333 </sup>
+    <sup class="unit-badge-content is-fixed"> 333 </sup>
   </div>
 
 ```
@@ -16,18 +17,18 @@ sup是HTML中的一个标签，用于表示上标文本。实现Badge 徽章用�
 
 ```
 
-.badge {
+.unit-badge {
   position: relative;
   vertical-align: middle;
   display: inline-block;
 }
-.badge-content.is-fixed {
+.unit-badge-content.is-fixed {
   position: absolute;
   top: 0;
   right: 10px;
   transform: translateY(-50%) translateX(100%);
 }
-.badge-content {
+.unit-badge-content {
   background-color: #f56c6c;
   border-radius: 10px;
   color: #fff;

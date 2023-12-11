@@ -1,10 +1,9 @@
 <template>
   <div v-html="md"></div>
-
   <h3>效果</h3>
-  <div class="badge">
+  <div class="unit-badge">
     <span>222</span>
-    <sup class="badge-content is-fixed"> 333 </sup>
+    <sup class="unit-badge-content is-fixed"> 333 </sup>
   </div>
 </template>
 <script>
@@ -20,18 +19,18 @@ export default {
 };
 </script>
 <style scoped>
-.badge {
+.unit-badge {
   position: relative;
   vertical-align: middle;
   display: inline-block;
 }
-.badge-content.is-fixed {
+.unit-badge-content.is-fixed {
   position: absolute;
   top: 0;
   right: 10px;
   transform: translateY(-50%) translateX(100%);
 }
-.badge-content {
+.unit-badge-content {
   background-color: #f56c6c;
   border-radius: 10px;
   color: #fff;

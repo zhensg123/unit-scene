@@ -1,28 +1,28 @@
-<template>
-  <div v-html="md"></div>
-  <h3>效果</h3>
-  <div class="review">
-    <span class="unit-tag">
+## Tag 标签
+
+Tag标签是一种归类。用于标记和选择。其可以有一个关闭事件。核心是html和css。尤其是css。
+
+其下css样式el-icon-close是element-ui所属的。这里拿过来用，用来表示一个icon图标。
+
+有了这个基本结构就可以封装样式，包括大小以及颜色了。
+
+tag的name可以作为slot占位。
+
+
+### html
+
+```
+
+<span class="unit-tag">
         name
         <i class="unit-tag__close unit-icon-close el-icon-close"> </i>
     </span>
-  </div>
 
-</template>
-  <script>
-import Tag from "../../../md/Tag.md";
+```
+### scss
 
-export default {
-  name: "Tag 标签",
-  data() {
-    return {
-      md: Tag,
-    };
-  },
-  methods: {},
-};
-</script>
-  <style lang="scss" scoped>
+```
+
 .unit-tag {
   background-color: #ecf5ff;
   border-color: #d9ecff;
@@ -65,5 +65,5 @@ export default {
 .unit-tag .unit-icon-close::before {
   display: block;
 }
+```
 
-</style>

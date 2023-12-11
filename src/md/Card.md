@@ -1,8 +1,12 @@
-<template>
-  <div v-html="md"></div>
-  <h3>效果</h3>
-  <div class="review">
-    <div class="unit-card is-always-shadow">
+## Card 卡片 (数据展示)
+
+Card核心是html和css，主要是css。重点是Card的外部阴影显示。Header和body是两个div而已。如果是在vue里面头部名称和body可以作为占位符。
+
+### html
+
+```
+
+ <div class="unit-card is-always-shadow">
       <div class="unit-card__header">
         我是头部
         <el-button style="float: right; padding: 3px 0" type="text"
@@ -13,22 +17,13 @@
         <div>我是内容区</div>
       </div>
     </div>
-  </div>
-</template>
-  <script>
-import Card from "../../../md/Card.md";
 
-export default {
-  name: "Card 卡片",
-  data() {
-    return {
-      md: Card,
-    };
-  },
-  methods: {},
-};
-</script>
-  <style lang="scss" scoped>
+```
+### scss
+
+```
+
+
 .unit-card {
   border-radius: 4px;
   border: 1px solid #ebeef5;
@@ -53,4 +48,5 @@ export default {
 .unit-card__body {
   padding: 20px;
 }
-</style>
+```
+
