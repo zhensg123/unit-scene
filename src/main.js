@@ -10,7 +10,7 @@ import 'highlight.js/styles/a11y-dark.css';
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import '../element-ui/lib/theme-chalk/index.css';
-
+import './style/global.css'
 const app = createApp(App)
 registerComponent(app)
 registerPackages(app)

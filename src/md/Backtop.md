@@ -1,10 +1,18 @@
-<template>
-  <div>
-    <div v-html="md"></div>
-    <h3>效果</h3>
-    <div class="review">
-      请往下滚动页面
-      <div
+## Backtop 回到顶部 (展示-导航)
+
+回到顶部解释
+
+- 回到顶部组件，在页面滚动到一定距离时，会出现一个按钮，点击按钮，页面会回到顶部
+- 组件的定位在页面的左下角位置
+- 其他自定
+- 可以通过tweenjs实现各种形式的回到顶部运动轨迹
+
+
+### html
+
+```
+
+ <div
        v-if="visible"
         @click.stop="handleClick"
         :style="{
@@ -18,19 +26,52 @@
       </slot> -->
         顶
       </div>
-    </div>
-  </div>
-</template>
-  <script>
+
+```
+### scss
+
+```
+
+.unit-backtop {
+  position: fixed;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #409eff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 20px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 5;
+}
+.unit-backtop:hover {
+  background-color: #f2f6fc;
+}
+```
+
+### JavaScript
+
+```
 import Backtop from "../../../md/Backtop.md";
 import throttle from "../../../utils/throttle";
 
 const cubic = (value) => Math.pow(value, 3);
+// 通过变换这个不分，可以实现各种运动轨迹
 const easeInOutCubic = (value) =>
   value < 0.5 ? cubic(value * 2) / 2 : 1 - cubic((1 - value) * 2) / 2;
 
 export default {
-  name: "回到顶部按钮",
+  name: "回到顶部",
   props: {
     visibilityHeight: {
       type: Number,
@@ -90,31 +131,6 @@ export default {
     },
   },
 };
-</script>
-  <style lang="scss" scoped>
-.unit-backtop {
-  position: fixed;
-  background-color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: #409eff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 20px;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  z-index: 5;
-}
-.unit-backtop:hover {
-  background-color: #f2f6fc;
-}
-</style>
+
+```
+
