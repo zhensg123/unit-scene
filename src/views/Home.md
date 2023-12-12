@@ -36,5 +36,10 @@
 12. v-on
 13. v-text
 14. v-html
+15. watch
+16. computed
+17. class
+18. style
+
 
 等类似逻辑去演变实现。
