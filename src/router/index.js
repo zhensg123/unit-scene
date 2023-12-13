@@ -7,7 +7,7 @@ export const showLayoutViewsRoutes = generateRoutes(require.context('../views/sh
 
 // 展示-数据展示数据
 export const showDatashowViewsRoutes = generateRoutes(require.context('../views/show/datashow', true, /\.vue$/), 'show-datashow')
-
+console.log(showDatashowViewsRoutes, 'dede')
 // 展示-导航数据
 export const showNavigationViewsRoutes = generateRoutes(require.context('../views/show/navigation', true, /\.vue$/), 'show-navigation')
 

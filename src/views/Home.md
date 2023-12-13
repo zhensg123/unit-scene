@@ -28,6 +28,7 @@
 4. 外部属性$attrs
 5. $refs
 6. $emit
+
 7. v-for
 8. v-if
 9. v-show
@@ -36,10 +37,17 @@
 12. v-on
 13. v-text
 14. v-html
+
 15. watch
 16. computed
 17. class
 18. style
+19. methods
+20. transition
+21. data
+
+22. h渲染函数
+23. jsx
 
 
 等类似逻辑去演变实现。
