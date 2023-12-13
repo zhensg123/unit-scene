@@ -45,7 +45,7 @@
   </div>
 </template>
   <script>
-import CenterAdaptive from "../../../md/CenterAdaptive.md";
+import Breadcrumb from "../../../md/Breadcrumb.md";
 
 export default {
   name: "面包屑导航",
@@ -55,7 +55,7 @@ export default {
   },
   data() {
     return {
-      md: CenterAdaptive,
+      md: Breadcrumb,
       separator: "/",
       separator1: "->",
       separatorClass: "",

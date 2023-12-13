@@ -12,6 +12,28 @@ ProgressLine 条形进度条，这里通过div实现的。
     </span>
 
 ```
+
+### JavaScript
+```
+export default {
+  name: "Result 结果展示",
+
+  props: {
+    title: {
+      type: String,
+      default: "标题",
+    },
+    subTitle: {
+      type: String,
+      default: "子标题",
+    },
+    icon: {
+      type: String,
+      default: "info",
+    },
+  },
+};
+```
 ### scss
 
 ```
@@ -58,26 +80,4 @@ ProgressLine 条形进度条，这里通过div实现的。
 .unit-tag .unit-icon-close::before {
   display: block;
 }
-```
-
-### javascript
-```
-export default {
-  name: "Result 结果展示",
-
-  props: {
-    title: {
-      type: String,
-      default: "标题",
-    },
-    subTitle: {
-      type: String,
-      default: "子标题",
-    },
-    icon: {
-      type: String,
-      default: "info",
-    },
-  },
-};
 ```

@@ -13,6 +13,27 @@ ProgressCircle 圆形进度条，这里整理的是svg来实现的。当然也�
     </span>
 
 ```
+### JavaScript
+```
+export default {
+  name: "Result 结果展示",
+
+  props: {
+    title: {
+      type: String,
+      default: "标题",
+    },
+    subTitle: {
+      type: String,
+      default: "子标题",
+    },
+    icon: {
+      type: String,
+      default: "info",
+    },
+  },
+};
+```
 ### scss
 
 ```
@@ -60,24 +81,4 @@ ProgressCircle 圆形进度条，这里整理的是svg来实现的。当然也�
   display: block;
 }
 ```
-### javascript
-```
-export default {
-  name: "Result 结果展示",
 
-  props: {
-    title: {
-      type: String,
-      default: "标题",
-    },
-    subTitle: {
-      type: String,
-      default: "子标题",
-    },
-    icon: {
-      type: String,
-      default: "info",
-    },
-  },
-};
-```

@@ -69,6 +69,26 @@ Timeline 时间线纯纯的ul标签实现，没有事件。
     </ul>
 
 ```
+### JavaScript
+
+```
+export default {
+  name: "Timeline 时间线",
+  props: {
+    timestamp: {
+      type: String,
+      default: "2019-01-01",
+    }
+  },
+  data() {
+    return {
+      md: CenterAdaptive,
+    };
+  },
+};
+
+```
+
 ### scss
 
 ```
@@ -156,24 +176,4 @@ Timeline 时间线纯纯的ul标签实现，没有事件。
 .unit-timeline-item__timestamp.is-bottom {
   margin-top: 8px;
 }
-```
-
-### javascript
-
-```
-export default {
-  name: "Timeline 时间线",
-  props: {
-    timestamp: {
-      type: String,
-      default: "2019-01-01",
-    }
-  },
-  data() {
-    return {
-      md: CenterAdaptive,
-    };
-  },
-};
-
 ```

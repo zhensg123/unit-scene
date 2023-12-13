@@ -82,7 +82,7 @@ tag的name可以作为slot占位。
 }
 ```
 
-### javascript
+### JavaScript
 ```
 export default {
   name: "Result 结果展示",

@@ -30,6 +30,38 @@
       </div>
 
 ```
+
+### JavaScript
+
+```
+ export default {
+    name: "Alert 警告",
+  
+    props: {
+      title: {
+        type: String,
+        default: "biaoti",
+      },
+      description: {
+        type: String,
+        default: "描述",
+      },
+      closeText: {
+        type: String,
+        default: "关闭",
+      }
+    },
+  
+    data() {
+      return {
+        visible: true,
+      };
+    }
+  };
+
+```
+
+
 ### scss
 
 ```
@@ -107,36 +139,6 @@
     font-size: 13px;
     top: 9px;
   }
-
-```
-
-### JavaScript
-
-```
- export default {
-    name: "Alert 警告",
-  
-    props: {
-      title: {
-        type: String,
-        default: "biaoti",
-      },
-      description: {
-        type: String,
-        default: "描述",
-      },
-      closeText: {
-        type: String,
-        default: "关闭",
-      }
-    },
-  
-    data() {
-      return {
-        visible: true,
-      };
-    }
-  };
 
 ```
 
