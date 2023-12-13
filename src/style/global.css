@@ -1,0 +1,15 @@
+.el-menu >.el-sub-menu >.el-sub-menu__title  span{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(130, 132, 138);
+
+}
+.el-sub-menu__title {
+  font-weight: bold;
+  color: rgb(130, 132, 138);
+
+
+}
+.el-menu-item:not(.is-active) span {
+  color: rgb(130, 132, 138);
+}

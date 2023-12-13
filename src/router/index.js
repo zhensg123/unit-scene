@@ -7,7 +7,7 @@ export const showLayoutViewsRoutes = generateRoutes(require.context('../views/sh
 
 // 展示-数据展示数据
 export const showDatashowViewsRoutes = generateRoutes(require.context('../views/show/datashow', true, /\.vue$/), 'show-datashow')
-
+console.log(showDatashowViewsRoutes, 'dede')
 // 展示-导航数据
 export const showNavigationViewsRoutes = generateRoutes(require.context('../views/show/navigation', true, /\.vue$/), 'show-navigation')
 
@@ -15,19 +15,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: '/show-layout-VerticalCenter'
+    component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
   },
   ...showLayoutViewsRoutes,
   ...showDatashowViewsRoutes,
-  ...showNavigationViewsRoutes,
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  ...showNavigationViewsRoutes
 ]
 
 const router = createRouter({

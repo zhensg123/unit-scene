@@ -1,71 +1,75 @@
-<template>
-  <transition name="el-fade-in">
-    <div
-      v-if="visible"
-      @click.stop="handleClick"
-      :style="{
-        right: styleRight,
-        bottom: styleBottom,
-      }"
-      class="el-backtop"
-    >
-      <slot>
+## Backtop 回到顶部 (展示-导航)
+
+回到顶部解释
+
+- 回到顶部组件，在页面滚动到一定距离时，会出现一个按钮，点击按钮，页面会回到顶部
+- 组件的定位在页面的左下角位置
+- 其他自定
+- 可以通过tweenjs实现各种形式的回到顶部运动轨迹
+
+
+### html
+
+```
+
+ <div
+       v-if="visible"
+        @click.stop="handleClick"
+        :style="{
+          right: '40px',
+          bottom: '40px',
+        }"
+        class="unit-backtop"
+      >
+        <!-- <slot>
         <unit-icon name="caret-top"></unit-icon>
-      </slot>
-    </div>
-  </transition>
-</template>
-  
-  <script>
+      </slot> -->
+        顶
+      </div>
+
+```
+
+### JavaScript
+
+```
+import Backtop from "../../../md/Backtop.md";
 import throttle from "../../../utils/throttle";
 
 const cubic = (value) => Math.pow(value, 3);
+// 通过变换这个不分，可以实现各种运动轨迹
 const easeInOutCubic = (value) =>
   value < 0.5 ? cubic(value * 2) / 2 : 1 - cubic((1 - value) * 2) / 2;
 
 export default {
-  name: "UnitBacktop",
-
+  name: "回到顶部",
   props: {
     visibilityHeight: {
       type: Number,
       default: 200,
     },
-    target: [String],
-    right: {
-      type: Number,
-      default: 40,
-    },
-    bottom: {
-      type: Number,
-      default: 40,
-    },
   },
-
   data() {
     return {
-      el: null,
-      container: null,
-      visible: false,
+      md: Backtop,
+      visible: false
     };
   },
-
-  computed: {
-    styleBottom() {
-      return `${this.bottom}px`;
-    },
-    styleRight() {
-      return `${this.right}px`;
-    },
+  beforeUnmount() {
+    this.container.removeEventListener("scroll", this.throttledScrollHandler);
   },
-
   mounted() {
     this.init();
     this.throttledScrollHandler = throttle(300, this.onScroll);
     this.container.addEventListener("scroll", this.throttledScrollHandler);
   },
-
   methods: {
+    onScroll() {
+      const scrollTop = this.el.scrollTop;
+      this.visible = scrollTop >= this.visibilityHeight;
+    },
+    handleClick() {
+      this.scrollToTop();
+    },
     init() {
       this.container = document;
       this.el = document.documentElement;
@@ -77,16 +81,9 @@ export default {
         this.container = this.el;
       }
     },
-    onScroll() {
-      const scrollTop = this.el.scrollTop;
-      this.visible = scrollTop >= this.visibilityHeight;
-    },
-    handleClick(e) {
-      this.scrollToTop();
-      this.$emit("click", e);
-    },
     scrollToTop() {
       const el = this.el;
+
       const beginTime = Date.now();
       const beginValue = el.scrollTop;
       const rAF =
@@ -103,14 +100,16 @@ export default {
       rAF(frameFunc);
     },
   },
-
-  beforeUnmount() {
-    this.container.removeEventListener("scroll", this.throttledScrollHandler);
-  },
 };
-</script>
-  <style scoped>
-.el-backtop {
+
+```
+
+
+### scss
+
+```
+
+.unit-backtop {
   position: fixed;
   background-color: #fff;
   width: 40px;
@@ -132,7 +131,8 @@ export default {
   cursor: pointer;
   z-index: 5;
 }
-.el-backtop:hover {
+.unit-backtop:hover {
   background-color: #f2f6fc;
 }
-</style>
+```
+

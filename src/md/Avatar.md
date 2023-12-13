@@ -1,15 +1,24 @@
-<template>
-     <div v-html="md"></div>
-    <h3>效果</h3>
-  <div>
-    <span class="unit-avatar unit-avatar--circle">
+## Avatar 头像 (展示-数据展示)
+
+Avatar 头像解释
+
+- 一个span标签，之后是纯css
+- span里面就是一个图片，可以是网络图片，也可以是本地图片
+
+
+### html
+
+```
+
+<span class="unit-avatar unit-avatar--circle">
       <img :src="src" style="object-fit: fit" v-if="src" alt="" />
     </span>
-  </div>
-</template>
-<script>
-import Avatar from "../../../md/Avatar.md";
 
+```
+
+### JavaScript
+
+```
 export default {
   props: {
     src: {
@@ -17,16 +26,15 @@ export default {
       default:
         "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
     },
-  },
-  name: "Avatar 头像",
-  data() {
-    return {
-      md: Avatar,
-    };
-  },
+  }
 };
 </script>
-<style lang="scss" scoped>
+
+```
+### scss
+
+```
+
 .unit-avatar {
   display: inline-block;
   -webkit-box-sizing: border-box;
@@ -48,4 +56,8 @@ export default {
 .unit-avatar--circle {
   border-radius: 50%;
 }
-</style>
+
+```
+
+
+

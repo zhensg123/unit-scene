@@ -9,6 +9,8 @@ export function generateRoutes(files, type = '未知') {
          * 兼容 import export 和 require module.export 两种规范
          */
         const component = module.default || module
+        console.log(component, 'component')
+
         routes.push({
           path: `/${type}-${path.slice(2, path.length - 4).replace('/', '-')}`,
           component,
@@ -16,7 +18,8 @@ export function generateRoutes(files, type = '未知') {
           meta: { title: path.slice(2, path.length - 4), icon: "el-icon-s-tools" },
         })
       })
-  
-    return routes.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hans-CN', { sensitivity: 'base' }));
+      console.log(routes, 'routes')
+
+    return routes.sort((a, b) => a.name && b.name && a.name.localeCompare(b.name, 'zh-Hans-CN', { sensitivity: 'base' }));
   
   }

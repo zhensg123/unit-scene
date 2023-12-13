@@ -1,5 +1,8 @@
 <template>
   <div class="left-fixed-menu">
+   <div class="site-name">
+    <el-button type="text" @click="$router.push('/')">母场景整理</el-button>
+   </div>
     <el-menu
       @open="handleOpen"
       @close="handleClose"
@@ -44,7 +47,7 @@
       </el-sub-menu>
       <el-sub-menu :index="2">
         <template #title>
-          <span>交互(interface)</span>
+          <span>交互(interactive)</span>
         </template>
         <el-sub-menu index="2-4">
           <template #title>item four</template>
@@ -156,5 +159,11 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.site-name {
+  padding: 5px 20px;
+  :deep(.el-button) {
+    font-size: 20px;
+  }
 }
 </style>
