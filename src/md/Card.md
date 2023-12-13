@@ -1,4 +1,4 @@
-## Card 卡片 (数据展示)
+## Card 卡片 (展示-数据展示)
 
 Card核心是html和css，主要是css。重点是Card的外部阴影显示。Header和body是两个div而已。如果是在vue里面头部名称和body可以作为占位符。
 
