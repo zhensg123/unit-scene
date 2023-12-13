@@ -1,5 +1,6 @@
 <template>
-
+ <div v-html="md"></div>
+    <h3>效果</h3>
   <div class="unit-progress unit-progress--circle" >
     <div
       class="unit-progress-circle"
@@ -34,6 +35,8 @@
   </div>
 </template>
 <script>
+  import ProgressCircle from "../../../md/ProgressCircle.md";
+
 export default {
   name: "ProgressCircle 圆型进度条",
   props: {
@@ -62,6 +65,11 @@ export default {
     },
     format: Function,
   },
+  data() {
+      return {
+        md: ProgressCircle,
+      };
+    },
   computed: {
     barStyle() {
       const style = {};

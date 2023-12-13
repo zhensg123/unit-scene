@@ -1,7 +1,19 @@
-<template>
-  <div v-html="md"></div>
-  <h3>效果</h3>
-  <div class="unit-result">
+## Result 结果展示
+
+Tag标签是一种归类。用于标记和选择。其可以有一个关闭事件。核心是html和css。尤其是css。
+
+其下css样式el-icon-close是element-ui所属的。这里拿过来用，用来表示一个icon图标。
+
+有了这个基本结构就可以封装样式，包括大小以及颜色了。
+
+tag的name可以作为slot占位。
+
+
+### html
+
+```
+
+ <div class="unit-result">
     <div class="unit-result__icon">
       <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -20,10 +32,58 @@
       </slot>
     </div>
   </div>
-</template>
-<script>
-import Result from "../../../md/Result.md";
 
+```
+### scss
+
+```
+
+.unit-tag {
+  background-color: #ecf5ff;
+  border-color: #d9ecff;
+  display: inline-block;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #409eff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.unit-tag .unit-tag__close {
+  color: #409eff;
+}
+.unit-tag .unit-tag__close:hover {
+  color: #fff;
+  background-color: #409eff;
+}
+
+
+.unit-tag .unit-icon-close {
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  top: -1px;
+  right: -5px;
+}
+.unit-tag .unit-icon-close::before {
+  display: block;
+}
+```
+
+### javascript
+```
 export default {
   name: "Result 结果展示",
 
@@ -41,56 +101,5 @@ export default {
       default: "info",
     },
   },
-  data(){
-    return {
-      md: Result
-    }
-  }
 };
-</script>
-<style lang="scss" scoped>
-.unit-result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 40px 30px;
-}
-.unit-result__icon svg {
-  width: 64px;
-  height: 64px;
-}
-.unit-result__title {
-  margin-top: 20px;
-}
-.unit-result__title p {
-  margin: 0;
-  font-size: 20px;
-  color: #303133;
-  line-height: 1.3;
-}
-.unit-result__subtitle {
-  margin-top: 10px;
-}
-.unit-result__subtitle p {
-  margin: 0;
-  font-size: 14px;
-  color: #606266;
-  line-height: 1.3;
-}
-
-.unit-result .icon-info {
-  fill: #909399;
-}
-
-</style>
+```

@@ -1,4 +1,6 @@
 <template>
+   <div v-html="md"></div>
+    <h3>效果</h3>
     <div class="unit-progress" :class="['unit-progress--line']">
       <div class="unit-progress-bar">
         <div
@@ -21,6 +23,8 @@
   
   </template>
   <script>
+  import ProgressLine from "../../../md/ProgressLine.md";
+
   export default {
     name: "ProgressLine 长型进度条",
     props: {
@@ -51,6 +55,11 @@
         default: "#606266",
       },
       format: Function,
+    },
+    data() {
+      return {
+        md: ProgressLine,
+      };
     },
     computed: {
       barStyle() {

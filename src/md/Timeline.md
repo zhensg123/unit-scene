@@ -1,15 +1,23 @@
-<template>
-  <div v-html="md"></div>
-  <h3>效果</h3>
-  <div class="review">
-    <ul class="unit-timeline">
+## Timeline 时间线 
+
+Timeline 时间线纯纯的ul标签实现，没有事件。
+
+
+### html
+
+```
+
+ <ul class="unit-timeline">
       <li class="unit-timeline-item">
         <div class="unit-timeline-item__tail"></div>
 
-        <div class="unit-timeline-item__node" :class="[
-          `unit-timeline-item__node--normal`,
-          `unit-timeline-item__node`,
-        ]"></div>
+        <div
+          class="unit-timeline-item__node"
+          :class="[
+            `unit-timeline-item__node--normal`,
+            `unit-timeline-item__node`,
+          ]"
+        ></div>
 
         <div class="unit-timeline-item__wrapper">
           <div class="el-timeline-item__timestamp is-top">
@@ -21,10 +29,13 @@
       <li class="unit-timeline-item">
         <div class="unit-timeline-item__tail"></div>
 
-        <div class="unit-timeline-item__node" :class="[
-          `unit-timeline-item__node--normal`,
-          `unit-timeline-item__node--primary`,
-        ]"></div>
+        <div
+          class="unit-timeline-item__node"
+          :class="[
+            `unit-timeline-item__node--normal`,
+            `unit-timeline-item__node--primary`,
+          ]"
+        ></div>
 
         <div class="unit-timeline-item__wrapper">
           <div class="unit-timeline-item__content">222</div>
@@ -37,10 +48,13 @@
       <li class="unit-timeline-item">
         <div class="unit-timeline-item__tail"></div>
 
-        <div class="unit-timeline-item__node" :class="[
-          `unit-timeline-item__node--normal`,
-          `unit-timeline-item__node--primary`,
-        ]">
+        <div
+          class="unit-timeline-item__node"
+          :class="[
+            `unit-timeline-item__node--normal`,
+            `unit-timeline-item__node--primary`,
+          ]"
+        >
           <i class="unit-timeline-item__icon el-icon-more"></i>
         </div>
 
@@ -53,27 +67,13 @@
         </div>
       </li>
     </ul>
-  </div>
-</template>
-<script>
-import Timeline from "../../../md/Timeline.md";
 
-export default {
-  name: "Timeline 时间线",
-  props: {
-    timestamp: {
-      type: String,
-      default: "2019-01-01",
-    }
-  },
-  data() {
-    return {
-      md: Timeline,
-    };
-  },
-};
-</script>
-<style lang="scss" scoped>
+```
+### scss
+
+```
+
+
 .unit-timeline {
   margin: 0;
   font-size: 14px;
@@ -156,4 +156,24 @@ export default {
 .unit-timeline-item__timestamp.is-bottom {
   margin-top: 8px;
 }
-</style>
+```
+
+### javascript
+
+```
+export default {
+  name: "Timeline 时间线",
+  props: {
+    timestamp: {
+      type: String,
+      default: "2019-01-01",
+    }
+  },
+  data() {
+    return {
+      md: CenterAdaptive,
+    };
+  },
+};
+
+```

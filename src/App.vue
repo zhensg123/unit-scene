@@ -47,7 +47,7 @@
       </el-sub-menu>
       <el-sub-menu :index="2">
         <template #title>
-          <span>交互(interface)</span>
+          <span>交互(interactive)</span>
         </template>
         <el-sub-menu index="2-4">
           <template #title>item four</template>

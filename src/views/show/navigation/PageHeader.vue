@@ -1,4 +1,5 @@
 <template>
+  <CommonHeader :md="md">
     <unit-page-header @back="goBack" content="详情页面">
       <div class="el-page-header">
       <div class="el-page-header__left" @click="$emit('back')">
@@ -12,6 +13,8 @@
       </div>
     </div>
 </unit-page-header>
+  </CommonHeader>
+
 
 </template>
 <script>
@@ -20,7 +23,8 @@
     data() {
       return {
         title: '详情页面',
-        content: '详情页面'
+        content: '详情页面',
+        md: ''
       }
     },
     methods: {
