@@ -184,10 +184,6 @@ export default {
 </script>
 <style scoped>
 
-
-
-
-
 .unit-progress {
   position: relative;
   line-height: 1;

@@ -42,7 +42,6 @@ Breadcrumb 面包屑导航解释
 ### JavaScript
 
 ```
-<script>
 export default {
   data() {
     return {
@@ -51,7 +50,6 @@ export default {
     }
   }
 }
-</script>
 ```
 
 ### scss
