@@ -49,22 +49,22 @@
         <template #title>
           <span>交互(interactive)</span>
         </template>
-        <el-sub-menu index="2-4">
+        <!-- <el-sub-menu index="2-4">
           <template #title>item four</template>
           <el-menu-item index="2-4-1">item one</el-menu-item>
-        </el-sub-menu>
+        </el-sub-menu> -->
       </el-sub-menu>
       <el-sub-menu :index="3">
         <template #title>
           <span>反馈(feedback)</span>
         </template>
-        <el-menu-item index="3-4-1">Alert</el-menu-item>
+        <!-- <el-menu-item index="3-4-1">Alert</el-menu-item>
         <el-menu-item index="3-4-1">Dialog</el-menu-item>
         <el-menu-item index="3-4-1">Drawer</el-menu-item>
         <el-menu-item index="3-4-1">Loading</el-menu-item>
         <el-menu-item index="3-4-1">Notification</el-menu-item>
         <el-menu-item index="3-4-1">Popconfirm</el-menu-item>
-        <el-menu-item index="3-4-1">Popover</el-menu-item>
+        <el-menu-item index="3-4-1">Popover</el-menu-item> -->
       </el-sub-menu>
     </el-menu>
   </div>
@@ -148,6 +148,7 @@ export default {
   left: 0;
   width: 300px;
   overflow: auto;
+  padding-bottom: 200px;
 }
 
 .right-content {
