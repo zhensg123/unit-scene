@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { isString, isObject } from './types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -115,15 +114,15 @@ export const coerceTruthyValueToArray = function(val) {
 };
 
 export const isIE = function() {
-  return !Vue.prototype.$isServer && !isNaN(Number(document.documentMode));
+  return  !isNaN(Number(document.documentMode));
 };
 
 export const isEdge = function() {
-  return !Vue.prototype.$isServer && navigator.userAgent.indexOf('Edge') > -1;
+  return  navigator.userAgent.indexOf('Edge') > -1;
 };
 
 export const isFirefox = function() {
-  return !Vue.prototype.$isServer && !!window.navigator.userAgent.match(/firefox/i);
+  return  !!window.navigator.userAgent.match(/firefox/i);
 };
 
 export const autoprefixer = function(style) {
@@ -241,5 +240,5 @@ export function objToArray(obj) {
 }
 
 export const isMac = function() {
-  return !Vue.prototype.$isServer && /macintosh|mac os x/i.test(navigator.userAgent);
+  return  /macintosh|mac os x/i.test(navigator.userAgent);
 };

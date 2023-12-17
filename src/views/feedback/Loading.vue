@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="loading">
     <div
       v-show="visible"
       class="el-loading-mask"
@@ -42,6 +42,9 @@ export default {
 };
 </script>
   <style lang="scss" scoped>
+  .loading {
+    position: absolute;
+  }
 .el-loading-parent--relative {
   position: relative !important;
 }
