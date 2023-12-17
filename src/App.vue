@@ -53,6 +53,13 @@
           <template #title>item four</template>
           <el-menu-item index="2-4-1">item one</el-menu-item>
         </el-sub-menu> -->
+        <el-menu-item
+            v-for="item in showInteractiveViewsRoutes"
+            :key="item.name"
+            :index="item.path"
+          >
+            <span :title="item.name">{{ item.name }}</span>
+          </el-menu-item>
       </el-sub-menu>
       <el-sub-menu :index="3">
         <template #title>
@@ -78,6 +85,7 @@ import {
   showLayoutViewsRoutes,
   showDatashowViewsRoutes,
   showNavigationViewsRoutes,
+  showInteractiveViewsRoutes
 } from "./router";
 console.log(showLayoutViewsRoutes, "showLayoutViewsRoutes");
 
@@ -99,6 +107,7 @@ export default {
       showLayoutViewsRoutes,
       showDatashowViewsRoutes,
       showNavigationViewsRoutes,
+      showInteractiveViewsRoutes
     };
   },
   watch: {

@@ -20,34 +20,44 @@
 
 ### 整理原则
 
-只去实现最核心那部分，实际开发为了符合业务要求，可以通过
+只去实现最核心那部分，实际开发为了符合业务要求，可以通过以下几种规则去演变实现。
+
+
+#### 向内传入
 
 1. 占位slot
 2. 传值prop
-3. 作用域插槽slotScope
-4. 外部属性$attrs
-5. $refs
-6. $emit
-
-7. v-for
-8. v-if
-9. v-show
-10. v-model
-11. v-bind
-12. v-on
-13. v-text
-14. v-html
-
-15. watch
-16. computed
-17. class
-18. style
-19. methods
-20. transition
-21. data
-
-22. h渲染函数
-23. jsx
+3. 外部属性$attrs
 
 
-等类似逻辑去演变实现。
+#### 内部逻辑
+
+1. v-for
+2. v-if
+3. v-show
+4. v-model
+5. v-bind
+6. v-on
+7. v-text
+8. v-html
+9. watch
+10. computed
+11. class
+12. style
+13. methods
+14. transition
+15. data
+16. h渲染函数
+17. jsx
+
+
+等。
+
+#### 作为一个对象存在
+
+1. $refs
+
+#### 向外传递
+
+1. $emit
+2. 作用域插槽slotScope
