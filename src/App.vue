@@ -80,6 +80,12 @@
         <el-menu-item index="3-4-1">Popconfirm</el-menu-item>
         <el-menu-item index="3-4-1">Popover</el-menu-item> -->
       </el-sub-menu>
+      <el-sub-menu :index="4">
+        <template #title>
+          <span>综合场景(comprehensive)</span>
+        </template>
+
+      </el-sub-menu>
     </el-menu>
   </div>
   <div class="right-content">
