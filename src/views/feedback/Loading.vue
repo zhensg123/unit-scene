@@ -42,9 +42,7 @@ export default {
 };
 </script>
   <style lang="scss" scoped>
-  .loading {
-    position: absolute;
-  }
+
 .el-loading-parent--relative {
   position: relative !important;
 }
@@ -59,7 +57,7 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 300px;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }

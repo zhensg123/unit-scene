@@ -38,7 +38,7 @@
     import Migrating from '../../mixins/migrating';
   
     export default {
-      name: 'ElRate',
+      name: 'Rate 评分',
   
       mixins: [Migrating],
   
@@ -214,7 +214,7 @@
         },
   
         rateDisabled() {
-          return this.disabled || (this.elForm || {}).disabled;
+          return this.disabled 
         }
       },
   
