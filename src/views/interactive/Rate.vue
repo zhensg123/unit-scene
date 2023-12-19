@@ -38,7 +38,7 @@
     import Migrating from '../../mixins/migrating';
   
     export default {
-      name: 'ElRate',
+      name: 'Rate',
   
       mixins: [Migrating],
   
