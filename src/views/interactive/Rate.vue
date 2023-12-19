@@ -39,7 +39,7 @@
   
     export default {
       name: 'Rate 评分',
-  
+
       mixins: [Migrating],
   
       inject: {
