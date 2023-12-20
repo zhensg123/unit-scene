@@ -11,8 +11,11 @@ export const showDatashowViewsRoutes = generateRoutes(require.context('../views/
 // 展示-导航数据
 export const showNavigationViewsRoutes = generateRoutes(require.context('../views/show/navigation', true, /\.vue$/), 'show-navigation')
 
-
+// 交互-数据
 export const showInteractiveViewsRoutes = generateRoutes(require.context('../views/interactive', true, /\.vue$/), 'interactive')
+
+// 反馈-数据
+export const showFeedbackViewsRoutes = generateRoutes(require.context('../views/feedback', true, /\.vue$/), 'feedback')
 
 const routes = [
   {
@@ -23,7 +26,8 @@ const routes = [
   ...showLayoutViewsRoutes,
   ...showDatashowViewsRoutes,
   ...showNavigationViewsRoutes,
-  ...showInteractiveViewsRoutes
+  ...showInteractiveViewsRoutes,
+  ...showFeedbackViewsRoutes
 ]
 
 const router = createRouter({

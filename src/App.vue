@@ -65,6 +65,13 @@
         <template #title>
           <span>反馈(feedback)</span>
         </template>
+        <el-menu-item
+            v-for="item in showFeedbackViewsRoutes"
+            :key="item.name"
+            :index="item.path"
+          >
+            <span :title="item.name">{{ item.name }}</span>
+          </el-menu-item>
         <!-- <el-menu-item index="3-4-1">Alert</el-menu-item>
         <el-menu-item index="3-4-1">Dialog</el-menu-item>
         <el-menu-item index="3-4-1">Drawer</el-menu-item>
@@ -72,6 +79,12 @@
         <el-menu-item index="3-4-1">Notification</el-menu-item>
         <el-menu-item index="3-4-1">Popconfirm</el-menu-item>
         <el-menu-item index="3-4-1">Popover</el-menu-item> -->
+      </el-sub-menu>
+      <el-sub-menu :index="4">
+        <template #title>
+          <span>综合场景(comprehensive)</span>
+        </template>
+
       </el-sub-menu>
     </el-menu>
   </div>
@@ -85,7 +98,8 @@ import {
   showLayoutViewsRoutes,
   showDatashowViewsRoutes,
   showNavigationViewsRoutes,
-  showInteractiveViewsRoutes
+  showInteractiveViewsRoutes,
+  showFeedbackViewsRoutes
 } from "./router";
 console.log(showLayoutViewsRoutes, "showLayoutViewsRoutes");
 
@@ -107,7 +121,8 @@ export default {
       showLayoutViewsRoutes,
       showDatashowViewsRoutes,
       showNavigationViewsRoutes,
-      showInteractiveViewsRoutes
+      showInteractiveViewsRoutes,
+      showFeedbackViewsRoutes
     };
   },
   watch: {
