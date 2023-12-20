@@ -6,7 +6,7 @@
 npm install
 ```
 
-### 羡慕启动
+### 项目启动
 
 ```
 npm run serve
