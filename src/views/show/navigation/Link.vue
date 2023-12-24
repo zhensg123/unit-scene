@@ -1,8 +1,5 @@
 <template>
-
-
-
-  <CommonHeader :md="md">
+<CommonHeader :md="md">
     <a
     :class="[
       'unit-link',
